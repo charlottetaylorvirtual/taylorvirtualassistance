@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
+    const dropdownLinks = document.querySelectorAll('.has-dropdown > a');
     
     menuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('active');
@@ -11,12 +12,27 @@ document.addEventListener('DOMContentLoaded', function() {
         spans.forEach(span => span.classList.toggle('active'));
     });
 
+    // Handle dropdown menus on mobile
+    dropdownLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const parent = this.parentElement;
+                parent.classList.toggle('active');
+            }
+        });
+    });
+
     // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-        if (!event.target.closest('.main-nav')) {
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.main-nav')) {
             navLinks.classList.remove('active');
             menuToggle.querySelectorAll('span').forEach(span => {
                 span.classList.remove('active');
+            });
+            // Close all dropdowns
+            document.querySelectorAll('.has-dropdown').forEach(dropdown => {
+                dropdown.classList.remove('active');
             });
         }
     });
