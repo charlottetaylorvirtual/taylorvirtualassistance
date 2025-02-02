@@ -1,26 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Site Name</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <!-- Navigation content will go here -->
-        </nav>
-    </header>
+# Taylor Virtual Assistance
 
-    <main>
-        <!-- Main content will go here -->
-    </main>
+Professional website for Taylor Virtual Assistance, offering social media management and administrative support services.
 
-    <footer>
-        <!-- Footer content will go here -->
-    </footer>
+## Services
 
-    <script src="js/main.js"></script>
-</body>
-</html>
+- Social Media Services
+  - Content Creation
+  - Caption Writing
+  - Scheduling and Posting
+  - Engagement and Community Management
+  - Profile Setup and Optimisation
+
+- Administrative Services
+  - Email and Diary Management
+  - Data Entry
+  - Organising Files and Documents
+  - Research and Reporting
+  - Travel Arrangements
+
+## Contact
+
+For enquiries, please visit (https://taylorvirtualassistance.com/contact).
+
+## Development
+
+This website is built with HTML, CSS, and JavaScript, hosted on GitHub Pages.
+
+© 2024 Taylor Virtual Assistance. All rights reserved.
