@@ -43,7 +43,14 @@
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <div class="container">
+            <div class="video-background">
+                <video autoplay muted loop playsinline poster="/images/video-fallback.jpg">
+                    <source src="https://player.vimeo.com/external/422787651.sd.mp4?s=ec39ce21acd5d8a12323057f5c62c3f4e8b06819&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="overlay"></div>
+            </div>
+            <div class="container hero-content">
                 <h1>Professional Virtual Assistance for Your Business</h1>
                 <p class="lead">Streamline your operations with expert social media management and administrative support</p>
                 <a href="/contact" class="primary-button">Get Started</a>
