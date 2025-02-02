@@ -3,8 +3,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     const dropdownLinks = document.querySelectorAll('.has-dropdown > a');
-    
-    menuToggle.addEventListener('click', function() {
+    let isMenuOpen = false;
+
+    // Toggle mobile menu
+    menuToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        isMenuOpen = !isMenuOpen;
         navLinks.classList.toggle('active');
         
         // Animate hamburger to X
@@ -17,7 +21,16 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', function(e) {
             if (window.innerWidth <= 768) {
                 e.preventDefault();
+                e.stopPropagation();
                 const parent = this.parentElement;
+                
+                // Close other open dropdowns
+                dropdownLinks.forEach(otherLink => {
+                    if (otherLink !== this) {
+                        otherLink.parentElement.classList.remove('active');
+                    }
+                });
+
                 parent.classList.toggle('active');
             }
         });
@@ -25,7 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(e) {
-        if (!e.target.closest('.main-nav')) {
+        if (isMenuOpen && !e.target.closest('.main-nav')) {
+            isMenuOpen = false;
             navLinks.classList.remove('active');
             menuToggle.querySelectorAll('span').forEach(span => {
                 span.classList.remove('active');
@@ -37,15 +51,33 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Handle window resize
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            // Reset mobile menu state when returning to desktop view
+            isMenuOpen = false;
+            navLinks.classList.remove('active');
+            menuToggle.querySelectorAll('span').forEach(span => {
+                span.classList.remove('active');
+            });
+            document.querySelectorAll('.has-dropdown').forEach(dropdown => {
+                dropdown.classList.remove('active');
+            });
+        }
+    });
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
+            const href = this.getAttribute('href');
+            if (href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
