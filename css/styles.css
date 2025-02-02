@@ -227,6 +227,84 @@ h1, h2, h3, h4 {
     color: var(--text-color);
 }
 
+/* Contact Page Styles */
+.contact-section {
+    padding: var(--spacing-lg) 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.contact-info {
+    background-color: var(--accent-color);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+}
+
+.contact-details {
+    list-style: none;
+    margin: var(--spacing-md) 0;
+}
+
+.contact-details li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact-details a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: var(--secondary-color);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--light-sage);
+    border-radius: 4px;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.required {
+    color: #e53e3e;
+}
+
+/* Contact Page Mobile Styles */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+}
+
 /* Footer */
 .main-footer {
     background-color: var(--dark-sage);
