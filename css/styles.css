@@ -268,16 +268,54 @@ h1, h2, h3, h4 {
     margin-top: var(--spacing-md);
 }
 
+/* Enhanced service cards */
 .service-card {
     padding: var(--spacing-md);
     border-radius: 8px;
     background-color: var(--background-color);
     box-shadow: 0 4px 6px rgba(44, 52, 36, 0.1);
     border: 1px solid var(--accent-color);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.service-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 15px rgba(44, 52, 36, 0.15);
+    border-color: var(--secondary-color);
+    background-color: var(--pale-sage);
 }
 
 .service-card h3 {
     color: var(--primary-color);
+    transition: color 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.service-card:hover h3 {
+    color: var(--deep-sage);
+}
+
+.service-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--deep-sage);
+    transition: width 0.3s ease;
+}
+
+.service-card:hover h3::after {
+    width: 100%;
 }
 
 .service-card ul {
@@ -285,6 +323,50 @@ h1, h2, h3, h4 {
     margin: var(--spacing-sm) 0;
     color: var(--text-color);
 }
+
+.service-card li {
+    transition: transform 0.2s ease, color 0.2s ease;
+    padding: 4px 0;
+}
+
+.service-card:hover li {
+    color: var(--deep-sage);
+}
+
+.service-card li:hover {
+    transform: translateX(5px);
+    color: var(--primary-color);
+}
+
+/* Animation classes for JavaScript */
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add staggered delay for list items */
+.service-card li {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, color 0.2s ease;
+}
+
+.service-card.visible li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.service-card li:nth-child(1) { transition-delay: 0.1s; }
+.service-card li:nth-child(2) { transition-delay: 0.2s; }
+.service-card li:nth-child(3) { transition-delay: 0.3s; }
+.service-card li:nth-child(4) { transition-delay: 0.4s; }
+.service-card li:nth-child(5) { transition-delay: 0.5s; }
 
 /* Contact Page Styles */
 .contact-section {
