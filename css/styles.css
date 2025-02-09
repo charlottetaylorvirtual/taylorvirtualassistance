@@ -69,11 +69,13 @@ h1, h2, h3, h4 {
     padding: var(--spacing-sm) 0;
 }
 
-.logo a {
-    font-family: var(--heading-font);
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    text-decoration: none;
+.logo img {
+    max-height: 50px;
+    width: auto;
+}
+
+.logo a:hover {
+    opacity: 0.9;
 }
 
 /* Navigation and Dropdown Styles */
