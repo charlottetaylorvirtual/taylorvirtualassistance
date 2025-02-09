@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
+    // Mobile menu toggle setup
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     const dropdownLinks = document.querySelectorAll('.has-dropdown > a');
@@ -30,12 +30,30 @@ document.addEventListener('DOMContentLoaded', function() {
                         otherLink.parentElement.classList.remove('active');
                     }
                 });
-
                 parent.classList.toggle('active');
             }
         });
     });
 
+    // Services card animation setup
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Once animation is done, we can stop observing the element
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1, // Trigger when 10% of the element is visible
+        rootMargin: '0px'
+    });
+
+    // Observe all service cards
+    document.querySelectorAll('.service-card').forEach(card => {
+        observer.observe(card);
+    });
+    
     // Close mobile menu when clicking outside
     document.addEventListener('click', function(e) {
         if (isMenuOpen && !e.target.closest('.main-nav')) {
