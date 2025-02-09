@@ -890,6 +890,108 @@ h1, h2, h3, h4 {
     text-align: center;
 }
 
+/* Homepage Pricing Packages – Reversed Colors */
+.pricing-packages {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--white); /* White background for the section */
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.pricing-price {
+    font-size: 2rem;              /* Large font size for visibility */
+    font-weight: bold;            /* Emphasize the price */
+    color: var(--white);          /* White text for contrast on dark card */
+    margin: var(--spacing-xs) 0;   /* Small vertical spacing */
+    text-align: center;           /* Center the price text */
+}
+
+.pricing-card {
+    background: var(--primary-color); /* Dark background (using your deep-sage) */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    padding: var(--spacing-md);
+    transition: all 0.3s ease;
+    border: 1px solid var(--sage); /* A slightly lighter green for the border */
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.pricing-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.15);
+}
+
+.pricing-card.featured {
+    border: 2px solid var(--white); /* Highlight featured package with a white border */
+    transform: scale(1.05);
+}
+
+.pricing-card.featured:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+.pricing-card h3 {
+    color: var(--white);           /* Headings in white */
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.pricing-description {
+    color: var(--white);           /* Description text in white */
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    min-height: 48px;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-md) 0;
+}
+
+.pricing-card li {
+    margin-bottom: var(--spacing-xs);
+    padding-left: var(--spacing-md);
+    position: relative;
+    color: var(--white);           /* List items in white */
+}
+
+.pricing-card li::before {
+    content: "•";
+    color: var(--white);           /* White bullet for list items */
+    position: absolute;
+    left: 0;
+}
+
+.pricing-card .primary-button {
+    width: 100%;
+    text-align: center;
+    background-color: var(--white);    /* Button with white background */
+    color: var(--primary-color);        /* Button text in your primary dark color */
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    margin-top: var(--spacing-md);
+}
+
+.pricing-card .primary-button:hover {
+    background-color: var(--sage);       /* On hover, button background changes to a medium tone */
+    color: var(--white);
+}
+
 /* Process Section Styles */
 .process-section {
     padding: var(--spacing-lg) 0;
