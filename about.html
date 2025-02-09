@@ -1,11 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Same head content as index.html -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional virtual assistance services including social media management and administrative support by Charlotte Taylor">
+    <title>About | Taylor Virtual Assistance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Add Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header remains the same -->
-    
+<header class="main-header">
+    <div class="container">
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="/">
+                    <img src="sitelogo.png" alt="Taylor Virtual Assistance Logo">
+                </a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="/services">Services</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/services/social-media">Social Media</a></li>
+                        <li><a href="/services/administrative">Admin Support</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact" class="cta-button">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
     <main>
         <!-- Hero Section -->
         <section class="hero">
@@ -110,6 +145,30 @@
         </section>
     </main>
 
-    <!-- Footer remains the same -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h4>Taylor Virtual Assistance</h4>
+                    <p>Professional virtual assistance services by Charlotte Taylor</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/services">Services</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Get in Touch</h4>
+                    <a href="/contact" class="cta-button">Contact Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Taylor Virtual Assistance. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
