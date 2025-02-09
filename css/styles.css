@@ -265,6 +265,176 @@ h1, h2, h3, h4 {
     line-height: 1.5;
 }
 
+/* About Page Styles */
+/* Founder Section */
+.founder-section {
+    padding: var(--spacing-lg) 0;
+}
+
+.founder-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+.founder-image {
+    position: relative;
+}
+
+.founder-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(44, 52, 36, 0.1);
+}
+
+.founder-content {
+    padding: var(--spacing-md);
+}
+
+.founder-content h2 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.subtitle {
+    color: var(--light-text);
+    font-weight: normal;
+    margin-bottom: var(--spacing-md);
+}
+
+.founder-credentials {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.credential {
+    text-align: center;
+}
+
+.credential .number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.credential .label {
+    color: var(--light-text);
+    font-size: 0.9rem;
+}
+
+/* Background Section */
+.background-section {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--pale-sage);
+}
+
+.background-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.background-card {
+    background: var(--white);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(44, 52, 36, 0.1);
+}
+
+.background-card h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.background-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.background-card li {
+    margin-bottom: var(--spacing-xs);
+    padding-left: var(--spacing-sm);
+    position: relative;
+}
+
+.background-card li::before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Values Section */
+.values-section {
+    padding: var(--spacing-lg) 0;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.value-card {
+    text-align: center;
+    padding: var(--spacing-md);
+}
+
+.value-card h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* CTA Section */
+.cta-section {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--accent-color);
+    text-align: center;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-top: var(--spacing-md);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .founder-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .background-grid,
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .background-grid,
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .founder-credentials {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 992px) {
     .benefits-grid {
