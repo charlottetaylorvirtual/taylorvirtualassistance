@@ -896,7 +896,7 @@ h1, h2, h3, h4 {
     background-color: var(--white); /* White background for the section */
 }
 
-.pricing h2 {
+.pricing-packages h2 {
     font-size: 2.5rem;
     margin-bottom: var(--spacing-sm);
     color: var(--primary-color);
