@@ -49,8 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
         rootMargin: '0px'
     });
     
-    // Observe all service cards and benefit cards
-    document.querySelectorAll('.service-card, .benefit-card').forEach(card => {
+    // Observe all
+    document.querySelectorAll('.service-card, .benefit-card, .process-step, .package-card').forEach(card => {
         observer.observe(card);
     });
     
