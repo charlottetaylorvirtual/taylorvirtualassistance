@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle setup
+    // ===== Mobile Menu Setup =====
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
     const dropdownLinks = document.querySelectorAll('.has-dropdown > a');
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         spans.forEach(span => span.classList.toggle('active'));
     });
 
-    // Handle dropdown menus on mobile
+    // ===== Dropdown Menu Handling =====
     dropdownLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             if (window.innerWidth <= 768) {
@@ -35,56 +35,40 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Services and benefits animation setup
+    // ===== Scroll Animations Setup =====
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Once animation is done, we can stop observing the element
                 observer.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.1, // Trigger when 10% of the element is visible
+        threshold: 0.1,
         rootMargin: '0px'
     });
-    
-    // Observe all service cards and benefit cards
-    document.querySelectorAll('.service-card, .benefit-card').forEach(card => {
-        observer.observe(card);
-    });
-    
-    // Close mobile menu when clicking outside
+
+    // Observe all animated elements
+    const animatedElements = document.querySelectorAll(
+        '.service-card, .benefit-card, .process-step, .package-card, .directory-card'
+    );
+    animatedElements.forEach(element => observer.observe(element));
+
+    // ===== Click Outside Handler =====
     document.addEventListener('click', function(e) {
         if (isMenuOpen && !e.target.closest('.main-nav')) {
-            isMenuOpen = false;
-            navLinks.classList.remove('active');
-            menuToggle.querySelectorAll('span').forEach(span => {
-                span.classList.remove('active');
-            });
-            // Close all dropdowns
-            document.querySelectorAll('.has-dropdown').forEach(dropdown => {
-                dropdown.classList.remove('active');
-            });
+            closeMobileMenu();
         }
     });
 
-    // Handle window resize
+    // ===== Window Resize Handler =====
     window.addEventListener('resize', function() {
         if (window.innerWidth > 768) {
-            // Reset mobile menu state when returning to desktop view
-            isMenuOpen = false;
-            navLinks.classList.remove('active');
-            menuToggle.querySelectorAll('span').forEach(span => {
-                span.classList.remove('active');
-            });
-            document.querySelectorAll('.has-dropdown').forEach(dropdown => {
-                dropdown.classList.remove('active');
-            });
+            closeMobileMenu();
         }
     });
 
-    // Smooth scroll for anchor links
+    // ===== Smooth Scroll =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
@@ -99,4 +83,16 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // ===== Helper Functions =====
+    function closeMobileMenu() {
+        isMenuOpen = false;
+        navLinks.classList.remove('active');
+        menuToggle.querySelectorAll('span').forEach(span => {
+            span.classList.remove('active');
+        });
+        document.querySelectorAll('.has-dropdown').forEach(dropdown => {
+            dropdown.classList.remove('active');
+        });
+    }
 });
