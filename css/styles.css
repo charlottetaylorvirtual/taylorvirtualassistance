@@ -815,6 +815,14 @@ h1, h2, h3, h4 {
     margin-top: var(--spacing-md);
 }
 
+.package-price {
+    font-size: 2rem;              /* Large font size for visibility */
+    font-weight: bold;            /* Emphasize the price */
+    color: var(--dark-sage);      /* Uses your defined dark-sage color */
+    margin: var(--spacing-xs) 0;   /* Small vertical spacing */
+    text-align: center;           /* Center the price text */
+}
+
 .package-card {
     background: var(--white);
     border-radius: 8px;
