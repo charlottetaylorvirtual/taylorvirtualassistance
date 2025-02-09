@@ -674,6 +674,12 @@ h1, h2, h3, h4 {
     padding: var(--spacing-lg) 0;
 }
 
+.services h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(300px, 400px)); /* Set max width */
