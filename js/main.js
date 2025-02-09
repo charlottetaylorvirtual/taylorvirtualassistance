@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Services card animation setup
+    // Services and benefits animation setup
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -48,9 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
         threshold: 0.1, // Trigger when 10% of the element is visible
         rootMargin: '0px'
     });
-
-    // Observe all service cards
-    document.querySelectorAll('.service-card').forEach(card => {
+    
+    // Observe all service cards and benefit cards
+    document.querySelectorAll('.service-card, .benefit-card').forEach(card => {
         observer.observe(card);
     });
     
