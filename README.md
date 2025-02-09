@@ -26,4 +26,4 @@ For enquiries, please visit (https://taylorvirtualassistance.com/contact).
 
 This website is built with HTML, CSS, and JavaScript, hosted on GitHub Pages.
 
-© 2024 Taylor Virtual Assistance. All rights reserved.
+© 2025 Taylor Virtual Assistance. All rights reserved.
