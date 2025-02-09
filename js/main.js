@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Observe all
-    document.querySelectorAll('.service-card, .benefit-card, .process-step, .package-card, .pricing-card').forEach(card => {
+    document.querySelectorAll('.service-card, .benefit-card, .process-step, .package-card, .pricing-card, .directory-card').forEach(card => {
         observer.observe(card);
     });
     
