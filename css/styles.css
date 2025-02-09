@@ -325,9 +325,10 @@ h1, h2, h3, h4 {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax(300px, 400px)); /* Set max width */
     gap: var(--spacing-md);
     margin-top: var(--spacing-md);
+    justify-content: center; /* Center the grid items */
 }
 
 /* Enhanced service cards */
