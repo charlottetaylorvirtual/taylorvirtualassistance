@@ -440,6 +440,80 @@ h1, h2, h3, h4 {
     }
 }
 
+/* Services Directory Styles */
+.services-directory {
+    padding: var(--spacing-lg) 0;
+}
+
+.directory-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.directory-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(44, 52, 36, 0.1);
+    border: 1px solid var(--accent-color);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.directory-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.directory-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(44, 52, 36, 0.15);
+    border-color: var(--secondary-color);
+}
+
+.directory-content {
+    padding: var(--spacing-lg);
+}
+
+.directory-content h2 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.directory-content p {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-color);
+}
+
+.directory-content ul {
+    list-style: none;
+    margin: 0 0 var(--spacing-md) 0;
+    padding: 0;
+}
+
+.directory-content li {
+    margin-bottom: var(--spacing-xs);
+    padding-left: var(--spacing-md);
+    position: relative;
+}
+
+.directory-content li::before {
+    content: "•";
+    color: var(--secondary-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .directory-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 992px) {
     .benefits-grid {
