@@ -236,6 +236,8 @@ h1, h2, h3, h4 {
 
 .benefit-card {
     padding: var(--spacing-md);
+    background-color: var(--white);
+    border-radius: 8px;
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.3s ease;
@@ -251,6 +253,9 @@ h1, h2, h3, h4 {
     height: 64px;
     margin: 0 auto var(--spacing-sm);
     color: var(--primary-color);
+    stroke-width: 1.5;  /* Make the icons a bit thicker */
+    fill: none;  /* Ensure icons are outline style */
+    display: block;  /* Ensure proper centering */
 }
 
 .benefit-title {
