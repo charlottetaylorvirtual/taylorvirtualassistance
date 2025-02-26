@@ -375,6 +375,69 @@ h1, h2, h3, h4 {
     left: 0;
 }
 
+/* Retainer Section Styles */
+.retainer {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--pale-sage);
+}
+
+.retainer h2 {
+    color: var(--deep-sage);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.retainer-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.retainer-info h3 {
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+}
+
+.retainer-intro {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.benefits-list {
+    list-style: none;
+    margin-bottom: var(--spacing-lg);
+}
+
+.benefits-list li, 
+.pricing-list li {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.1rem;
+}
+
+.check-icon {
+    color: var(--deep-sage);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.pricing-list {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .retainer h2 {
+        font-size: 2rem;
+    }
+    
+    .retainer-intro,
+    .benefits-list li, 
+    .pricing-list li {
+        font-size: 1rem;
+    }
+}
+
 /* Values Section */
 .values-section {
     padding: var(--spacing-lg) 0;
