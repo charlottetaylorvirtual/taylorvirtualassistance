@@ -827,6 +827,24 @@ h1, h2, h3, h4 {
     }
 }
 
+/* Ad-hoc Support Section Styles */
+.adhoc-support {
+    padding: var(--spacing-lg) 0;
+    background-color: var(--pale-sage);
+}
+
+/* For visual distinction, add a subtle pattern or slightly different shade */
+.retainer {
+    background-color: #e0e9e0; /* Slightly different shade than pale-sage */
+}
+
+.adhoc-support h2 {
+    color: var(--deep-sage);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+}
+
 /* Service Overview Styles */
 .service-overview {
     padding: var(--spacing-lg) 0;
